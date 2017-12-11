@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+	<meta name="viewport" content="initial-scale=1.0">
+    <meta charset="utf-8">
+	<title>Candidato Inteligente</title>
+	<link rel="stylesheet" type="text/css" href="css/jquery.pagepiling.css" />
+	<link rel="stylesheet" type="text/css" href="css/menu-hamburguesa.css" />
+	<link rel="stylesheet" type="text/css" href="css/slick.css" />
+	<link rel="stylesheet" type="text/css" href="css/main.css" />
+</head>
+<body>
+	
+	<div class="loader show">	
+		<div class="loader-barra"></div>
+		<div class="logo"></div>		
+	</div>
+
+	<!--<ul id="menu">
+		<li data-menuanchor="page1" class="active"><a href="#page1">Page 1</a></li>
+		<li data-menuanchor="page2"><a href="#page2">Page 2</a></li>
+		<li data-menuanchor="page3"><a href="#page3">Page 3</a></li>
+	</ul>-->
+
+	
+	<div class="ctx-menu">
+		<ul>
+			<li><a href="javascript:void(0)" class="move active inicio" data-id="1">INTRO</a></li>
+			<li><a href="javascript:void(0)" class="move candidatos" data-id="2">CANDIDATOS</a></li>
+			<li><a href="javascript:void(0)" class="move pinera" data-id="3">CANDIDATO PIÑERA</a></li>
+			<li><a href="javascript:void(0)" class="move guiller" data-id="4">CANDIDATO GUILLER</a></li>
+			<li><a href="javascript:void(0)" class="move funciona" data-id="5">¿CÓMO FUNCIONA?</a></li>
+		</ul>
+	</div>
+	
+	<div id="pagepiling" class="wrapper">
+	    <!--HEADER-->	    
+	    
+	        
+	    <div class="hamburger hamburger--elastic js-hamburger">
+			<div class="hamburger-box">
+				<div class="hamburger-inner"></div>
+			</div>
+		</div>	    
+	    
+	    
+	    <div class="section" id="section1">
+	    	<div class="logo-ini"></div>
+	    	<div class="bg-candidatos">
+		    	<div class="rec-amarillo presi"></div>
+		    	<div class="rec-celeste presi"></div>
+		    	
+		    	
+		    	<div class="bg-guiller presi"></div>
+				<div class="bg-pinera presi"></div>		    	
+	    	</div>
+	    		    
+	    	<div class="intro">
+		    	Para estas elecciones hemos desarrollado <span class="amarillo">la Inteligencia Artificial de Sebastián Piñera y Alejandro Guillier</span> para que por primera vez puedas conversar con ellos.
+	    	</div>	    
+	    		    
+	    		    
+	    	<a href="javascript:void(0);" class="down one" data-id="2" data-name="candidatos"></a>	    	
+	    </div>
+	    	    
+	    <div class="section" id="section2">
+	    	<div class="rec-amarillo2"></div>
+			<div class="rec-celeste2"></div>
+	    	
+	    	<div class="intro2">
+		    	Selecciona uno de los dos chats y comienza a hablar con tu candidato.
+	    	</div>
+	    	
+	    	<div class="ctx-candidatos">
+		    	<div class="bg-guiller candi">
+			    	<div class="imagen-candidato" data-id="4" data-name="guiller"></div>	
+		    	</div>
+		    	
+		    	<div class="bg-pinera candi">
+			    	<div class="imagen-candidato" data-id="3" data-name="pinera"></div>
+		    	</div>
+	    	</div>
+	    	
+	    	<a href="javascript:void(0);" class="down como" data-id="5" data-name="funciona"></a>	
+	    </div>
+	    
+	    <div class="section" id="section3">
+		    <div class="rec-amarillo2"></div>		    
+		    <div class="pinera-habla">
+			    <div class="cuadro"></div>
+		    </div>	
+		    
+		    <div class="ctx-ifrma-pinera">
+			    <div class="mask">
+				    <div class="name">Sebastian Piñera</div>
+			    </div>
+			    <iframe width="99%" height="99%" src="https://console.dialogflow.com/api-client/demo/embedded/ec069993-9958-4005-8ab5-38c080b8c6ff"></iframe>
+		    </div>
+		    
+		    <a href="javascript:void(0);" class="mas pinerahabla" data-id="4" data-name="guiller"></a>	
+	    </div>
+	    
+	    <div class="section" id="section4">
+	    	<div class="rec-amarillo2"></div>		    
+		    <div class="guiller-habla">
+			    <div class="cuadro"></div>
+		    </div>	
+		    
+		    <div class="ctx-ifrma-guiller">
+			    <div class="mask">
+				    <div class="name">Alejandro Guiller</div>
+			    </div>
+			    <iframe width="99%" height="99%" src="https://console.dialogflow.com/api-client/demo/embedded/7fc39ee6-0615-447e-8e88-0efcbff5bf16"></iframe>
+		    </div>
+		    	    
+	    	<a href="javascript:void(0);" class="mas guillerhabla" data-id="3" data-name="pinera"></a>		    	
+	    </div>
+	    
+	    <div class="section" id="section5">
+	    	<div class="rec-amarillo2"></div>		    
+		    <div class="bg-comofunciona"></div>	
+		    
+		    <div class="intro2">
+		    	Candidato Inteligente es un proyecto desarrollado<br><span class="amarillo">por Fundación Ciudadano Inteligente</span> para acercar la política a todas las personas del país. Descubre acá como funciona.
+	    	</div>
+		    
+		    <ul class="bloque-iconos">
+			    <li><img src="img/ico1.png" class="imguno"></li>
+			    <li><img src="img/ico2.png" class="imgdos"></li>
+			    <li><img src="img/ico3.png"></li>
+			    <li><img src="img/ico4.png" class="imgcuatro"></li>
+		    </ul>
+		    
+	    </div>
+	    
+	</div>
+	
+	<script src="js/jquery.js"></script>
+	<script src="js/jquery.pagepiling.min.js"></script>
+	<script src="js/velocity.min.js"></script>
+    <script src="js/velocity.ui.min.js"></script>    
+    <script src="js/slick.js"></script>
+	<script src="js/plugins.js"></script>
+	<script src="js/src/main.js"></script>
+</body>
+</html>

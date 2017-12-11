@@ -1,0 +1,1142 @@
+@import 'bourbon';
+
+@font-face {
+    font-family: 'arvoregular';
+    src: url('../font/arvo-regular-webfont.woff2') format('woff2'),
+         url('../font/arvo-regular-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+
+html,
+body {
+    height: 100%;
+}        
+    
+.loader {
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+	z-index: 2000;
+	background: transparent url(../img/bg.jpg) no-repeat center center;
+	background-size: cover;
+	@include transition(all 600ms ease);
+	&.show{
+		opacity: 1;
+		visibility: visible;	
+	}
+	&.hide{
+		opacity: 0;
+		visibility: hidden;	
+		display: none;
+	}
+	
+	.loader-barra{
+		width: 0;
+		height: 5px;
+		position: absolute;
+		top:0;
+		left: 0;
+		background: #fec60f;
+		
+	}
+	.logo{
+		width: 169px;
+		height: 133px;
+		position: absolute;
+		top:0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		margin: auto;
+		background: transparent url(../img/isotipo.png) no-repeat center center;
+		background-size: contain;		
+	}				
+}
+
+
+.ctx-menu{
+	width: 550px;
+	height: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 100;
+	display: none;
+	opacity: 0;
+	visibility: hidden;
+	background: transparent url(../img/bg-menu.png) no-repeat center center;
+	background-size: cover;
+	@include transform(translateX(-50%));
+	@include transition(all 300ms ease);
+	&.active{
+		opacity: 1;
+		visibility: visible;
+		@include transform(translateX(0%));
+	}
+	@media screen and (max-width:1024px){
+	    width: 470px;
+    }
+    @media screen and (max-width:480px){
+	    width: 300px;
+    }
+	ul{
+		margin: 0;
+		padding: 0;
+		position: absolute;
+		display: block;
+		top: 200px;
+		width: 300px;
+		left: 50px;
+		z-index: 10;
+		list-style: none;	
+		li{
+			position: relative;
+			display: block;
+			height: 35px;
+			width: 100%;
+			text-align: left;
+			margin-bottom: 15px;
+			a{
+				font-family: 'arvoregular';
+				font-size: 17px;
+				text-decoration: none;
+				outline: 0;
+				line-height: 25px;
+				letter-spacing: 2px;				
+				color: #fff;
+				@include transition(all 200ms ease);
+				@media screen and (min-width:1024px){
+					font-size: 15px;
+					line-height: 22px;
+					letter-spacing: 1px;
+				}
+			}
+		}	
+		li > a:before {
+			content: "";
+			position: absolute;			
+			height: 2px;
+			bottom: 0;
+			left: 2px;
+			width: 200px;
+			background-color: #cacaca;
+			visibility: hidden;
+			-webkit-transform: scaleX(0);
+			transform: scaleX(0);
+			-webkit-transition: all 0.3s ease-in-out 0s;
+			transition: all 0.3s ease-in-out 0s;
+			@include transition(all 200ms ease);
+			@media screen and (min-width:1024px){
+				font-size: 15px;
+				line-height: 22px;
+				letter-spacing: 1px;
+			}
+		}		
+		li > a:hover:before,  li > a.active:before{
+		  visibility: visible;
+		  -webkit-transform: scaleX(1);
+		  transform: scaleX(1);
+		}
+	}
+}
+
+
+.wrapper{
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	top:0;
+	left: 0;
+	overflow: hidden;
+	display: none;
+	opacity: 0;
+	visibility: hidden;
+	&.active{
+		opacity: 1;
+		visibility: visible;	
+	}
+}
+
+
+.hamburger{
+	position: fixed;
+	top: 40px;
+	left: 30px;
+	z-index: 1000;
+    background: transparent;
+    display: block;
+    opacity: 1;
+    padding: 0;
+    @include transition(all 200ms ease);
+    @media screen and (max-width:640px){
+		top: 20px;
+		left: 20px;
+    }
+    .hamburger-box {
+	    width: 30px;
+    }
+    .hamburger-inner:before, .hamburger-inner:after, .hamburger-inner {
+	    width: 30px;
+    }
+    .hamburger-inner{
+	    background-color: #fff;
+    }
+}
+
+.hamburger-inner, .hamburger-inner:after, .hamburger-inner:before {
+    height: 2px;
+}
+
+.hamburger .hamburger-inner, .hamburger .hamburger-inner:after, .hamburger .hamburger-inner:before {
+    background-color: #fff!important;
+}
+
+#pp-nav{
+	display: none;
+}
+/*#pp-nav li .active span, .pp-slidesNav .active span {
+    background: #fff;
+}*/
+
+.section{
+	position: absolute;
+	left: 0;
+	right: 0;
+	margin: 0 auto;
+	color: #fff;
+	background: transparent url(../img/bg.jpg) no-repeat center center;
+	background-size: cover;		
+	
+	.logo-ini{
+		width: 824px;
+		height: 133px;
+		position: absolute;
+		top: 150px;
+		left: 0;
+		right: 0;
+		margin: auto;
+		z-index: 10;
+		background: transparent url(../img/logo-site.png) no-repeat center center;
+		background-size: contain;
+		@include transition(all 300ms ease);
+		@media screen and (max-width:1200px){
+			width: 600px;
+			height: 97px;
+			top: 80px;
+		}
+		@media screen and (max-width:480px){
+			width: 270px;
+			height: 72px;
+			top: 90px;
+			background: transparent url(../img/logo-mobile.png) no-repeat center center;
+			background-size: contain;
+		}
+ 	}
+	
+	.bg-candidatos{
+		width: 100%;
+		height: 100%;
+		position: absolute;
+		top:0;
+		left: 0;
+		z-index: 1;
+		
+		@media screen and (max-width:480px){		    
+			background: transparent url(../img/bg-mobile.jpg) no-repeat center center;
+			background-size: cover;
+	    }
+		
+		.rec-amarillo{
+			width: 188px;
+			height: 501px;
+			position: absolute;
+			top:0;
+			left: 0;
+			z-index: 2;
+			background: transparent url(../img/rec-amarillo.png) no-repeat center center;
+			background-size: cover;
+			@include transform(translateY(-100%));
+		    @include transition(all 300ms ease);	    	   
+		    &.active{
+			    opacity: 1;
+			    visibility: visible;
+			    @include transform(translateY(0%));
+		    }
+		    @media screen and (max-width:1024px){
+			    width: 120px;
+				height: 320px;
+		    }
+		    
+		    @media screen and (max-width:640px){
+			    width: 100px;
+				height: 100px;
+				background: transparent url(../img/bg-menu-mobile.png) no-repeat center center;
+				background-size: contain;
+		    }
+		    
+		}
+		.rec-celeste{
+			width: 188px;
+			height: 501px;
+			position: absolute;
+			bottom:0;
+			right: 0;
+			z-index: 2;
+			background: transparent url(../img/rec-celeste.png) no-repeat center center;
+			background-size: cover;
+			display: block;
+			@include transform(translateY(100%));
+		    @include transition(all 300ms ease);	    	   
+		    &.active{
+			    opacity: 1;
+			    visibility: visible;
+			    @include transform(translateY(0%));
+		    }
+		    @media screen and (max-width:1024px){
+			    width: 120px;
+				height: 320px;
+		    }
+			@media screen and (max-width:480px){
+				display: none;			
+			}
+		}
+		.bg-guiller{
+			width: 48%;
+			height: 100%;
+			position: absolute;
+			top:0;
+			left: 0;
+			background: transparent url(../img/bg-guiller.png) no-repeat center center;
+			background-size: cover;
+			@include transform(translateX(-100%));
+		    @include transition(all 500ms ease);	    	   
+		    &.active{
+			    opacity: 1;
+			    visibility: visible;
+			    @include transform(translateX(0%));
+		    }
+		    @media screen and (max-width:768px){
+			    background: transparent url(../img/bg-guiller.png) no-repeat -310px center;
+				background-size: cover;
+		    }
+		    @media screen and (max-width:480px){
+				display: none;			
+			}
+		}
+		.bg-pinera{
+			width: 48%;
+			height: 100%;
+			position: absolute;
+			top:0;
+			right: 0;
+			background: transparent url(../img/bg-pinera.png) no-repeat center center;
+			background-size: cover;
+			@include transform(translateX(100%));
+		    @include transition(all 500ms ease);    	   
+		    &.active{
+			    opacity: 1;
+			    visibility: visible;
+			    @include transform(translateX(0%));
+		    }
+		    @media screen and (max-width:768px){
+			    background: transparent url(../img/bg-pinera.png) no-repeat -210px center;
+				background-size: cover;
+		    }
+		    @media screen and (max-width:480px){
+				display: none;			
+			}
+		}				
+	}
+	
+	.intro{
+		font-family: 'arvoregular';
+		font-size: 28px;
+		color: #fff;
+		width: 75%;
+		height: auto;
+		position: absolute;
+		top: 45%;
+		left: 12.5%;
+		margin: auto;
+		z-index: 10;
+		text-transform: uppercase;
+		line-height: 33px;
+		padding: 20px 0;
+		border-top: 1px solid #262d51;
+		border-bottom: 1px solid #262d51;
+		letter-spacing: 2px;
+		text-align: center;
+		opacity: 0;
+		visibility: hidden;
+		@include transition(all 500ms ease);
+		@include transform(scale(.8));
+		.amarillo{
+			color: #fec70d;
+		}
+		.azul{
+			color: #67b7fc;
+		}
+		&.active{
+			opacity: 1;
+			visibility: visible;
+			@include transform(scale(1));
+		}	
+		@media screen and (max-width:1770px){
+			font-size: 25px;
+			line-height: 30x;
+		}
+		@media screen and (max-width:1500px){
+			font-size: 22px;
+			line-height: 27x;
+		}
+		@media screen and (max-width:1366px){
+			font-size: 20px;
+		}
+		@media screen and (max-width:1280px){
+			font-size: 18px;
+		}
+		@media screen and (max-width:1120px){
+			font-size: 16px;
+		}
+		@media screen and (max-width:1024px){
+			width: 85%;
+			font-size: 16px;
+			line-height: 26px;
+			left: 7.5%;
+		}
+		@media screen and (max-width:768px){
+			width: 80%;
+			line-height: 20px;
+			left: 10%;
+		}
+		@media screen and (max-width:480px){
+			width: 90%;
+			left: 5%;
+			font-size: 12px;
+			line-height: 14px;
+		}
+	}
+	
+	
+	
+	
+	//SECCION2
+	
+	.intro2{
+		font-family: 'arvoregular';
+		font-size: 19px;
+		color: #fff;
+		width: 60%;
+		height: auto;
+		position: absolute;
+		top: 40px;
+		left: 20%;
+		z-index: 10;
+		text-transform: uppercase;
+		line-height: 27px;
+		padding: 20px 0;
+		border-top: 1px solid #262d51;
+		border-bottom: 1px solid #262d51;
+		letter-spacing: 2px;
+		text-align: center;
+		@include transition(all 200ms ease);
+		.amarillo{
+			color: #fec70d;
+		}
+		.azul{
+			color: #67b7fc;
+		}
+		@media screen and (max-width:1280px){
+			font-size: 17px;
+			width: 70%;
+			top: 30px;
+			left: 15%;
+			line-height: 20px;
+		}
+		@media screen and (max-width:1100px){
+			font-size: 15px;
+			line-height: 20px;
+		}
+		@media screen and (max-width:1024px){
+			width: 60%;
+			font-size: 14px;
+			left: 20%;
+			
+		}
+		@media screen and (max-width:900px){
+			font-size: 13px;
+		}
+		.salto{
+			display: block;
+			@media screen and (max-width:1024px){
+				display: none;				
+			}
+		}
+		
+		@media screen and (max-width:480px){
+		    width: 80%;
+		    left: 10%;
+		    font-size: 12px;
+			line-height: 13px;
+			padding: 10px 0;
+			top: 70px;
+	    }
+	    
+	   @media screen and (max-width:320px){
+			width: 75%;
+			left: 12.5%;
+			font-size: 11px;
+			line-height: 13px;
+			padding: 10px 0;
+			top: 60px;
+	    }
+		
+		
+			
+	}
+	
+	.rec-amarillo2{
+		width: 175px;
+		height: 179px;
+		position: absolute;
+		top:0;
+		left: 0;
+		z-index: 2;
+		background: transparent url(../img/rec-amarillo2.png) no-repeat center center;
+		background-size: cover;
+		@media screen and (max-width:640px){
+		    width: 100px;
+			height: 100px;
+			background: transparent url(../img/bg-menu-mobile.png) no-repeat center center;
+			background-size: contain;
+		}
+	}
+	.rec-celeste2{
+		width: 175px;
+		height: 179px;
+		position: absolute;
+		bottom:0;
+		right: 0;
+		z-index: 2;
+		background: transparent url(../img/rec-celeste2.png) no-repeat center center;
+		background-size: cover;		
+		display: block;
+		@media screen and (max-width:640px){
+		    display: none;
+		}
+	}
+	
+	
+	.ctx-candidatos{
+	    width: 90%;
+	    height: 58%;
+	    position: absolute;
+	    top:50px;
+	    left: 0;
+	    right: 0;
+	    bottom: 0;
+	    margin: auto;
+	    @include transition(all 200ms ease);
+	    @media screen and (max-width:1500px){
+			height: 55%;
+		}
+	    @media screen and (max-width:1366px){
+			height: 52%;
+		}
+		@media screen and (max-width:1200px){
+			height: 48%;
+		}
+		@media screen and (max-width:1100px){
+			height: 41%;
+		}
+	    @media screen and (max-width:1024px){
+			height: 39%;
+		}
+		@media screen and (max-width:768px){
+			height: 70%;
+		}
+		@media screen and (max-width:480px){
+			height: 60%;
+			top: 110px;
+		}
+		@media screen and (max-width:320px){
+		    height: 62%;
+			top: 80px;
+		}
+		
+		
+		.bg-guiller{
+			position: absolute;
+			width: 48%;
+			height: 100%;
+			left: 0;
+			top:0;
+			opacity: 0;
+			@include transition(all 200ms ease);
+			@media screen and (max-width:768px){
+				height: 48%;
+				width: 100%;
+			}
+			@media screen and (max-width:480px){
+				width: 48%;
+				height: 92%;
+				top: 0%;
+			}
+			
+			
+			
+			.imagen-candidato{
+				width: 100%;
+				padding-bottom: 75%;
+				position: absolute;
+				left: 0;
+				top:0;
+				background: transparent url(../img/guiller-intro.png) no-repeat center center;
+				background-size: contain;
+				cursor: pointer;
+				@media screen and (max-width:768px){
+					padding-bottom: 49%;
+				}
+				
+				@media screen and (max-width:480px){
+					background: transparent url(../img/mobile-guiller.png) no-repeat center center;
+					background-size: contain;
+					padding-bottom: initial;
+					height: 100%;
+				}
+				
+				&:hover{
+					background: transparent url(../img/guiller-intro-over.png) no-repeat center center;
+					background-size: contain;
+					@media screen and (max-width:480px){
+						background: initial;
+						background-size: initial;	
+					}
+				}
+			}
+		}
+		.bg-pinera{
+			position: absolute;
+			width: 48%;
+			height: 100%;
+			right: 0;
+			top:0;
+			opacity: 0;
+			@include transition(all 200ms ease);
+			@media screen and (max-width:768px){
+				height: 48%;
+				width: 100%;
+				top: initial;
+				bottom: 0;
+			}
+			
+			@media screen and (max-width:480px){
+				width: 48%;
+				height: 92%;
+				top: 0%;
+			}
+			
+			.imagen-candidato{
+				width: 100%;
+				padding-bottom: 75%;
+				position: absolute;
+				right: 0;
+				top: 0;
+				background: transparent url(../img/pinera-intro.png) no-repeat center center;
+				background-size: contain;
+				cursor: pointer;
+				@media screen and (max-width:768px){
+					padding-bottom: 49%;
+				}
+				
+				@media screen and (max-width:480px){
+					background: transparent url(../img/mobile-pinera.png) no-repeat center center;
+					background-size: contain;
+					padding-bottom: initial;
+					height: 100%;
+				}
+				
+				&:hover{
+					background: transparent url(../img/pinera-intro-over.png) no-repeat center center;
+					background-size: contain;
+					@media screen and (max-width:480px){
+						background: initial;
+						background-size: initial;	
+					}
+				}
+			}
+		}
+	}
+	
+
+	
+	
+	//HABLA GUILLEr
+	.guiller-habla{
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 53%;
+		height: 100%;
+		background: transparent url(../img/guiller-color.png) no-repeat left top;
+		background-size: cover;
+		@include transition(all 200ms ease);
+		@media screen and (max-width:1280px){
+			width: 57%;
+		}
+		@media screen and (max-width:480px){
+			width: 100%;
+		}
+		.cuadro{
+			width: 219px;
+			height: 240px;
+			position: absolute;
+			top:20%;
+			left: 57%;
+			background: transparent url(../img/guiller-cuadro.png) no-repeat center center;
+			background-size: contain;
+			opacity: 0;
+			display: block;
+			@include transition(all 200ms ease);
+			@media screen and (max-width:1280px){
+				width: 199px;
+				height: 220px;
+			}
+			@media screen and (max-width:1100px){
+				width: 189px;
+				height: 210px;
+			}
+			@media screen and (max-width:1024px){
+				width: 179px;
+				height: 200px;
+			}
+			@media screen and (max-width:480px){
+				display: none!important;
+			}
+			&:after{
+				content: 'Estoy programado para que conversemos sobre lo más importante de mi programa y mi vida personal. ¿Qué quieres saber?';
+			    width: 385px;
+			    height: auto;
+			    position: absolute;
+			    bottom: -110px;
+			    right: -190px;
+			    font-family: 'arvoregular';
+			    font-size: 13px;
+			    color: #fff;
+			    text-align: right;
+			    text-transform: uppercase;
+			    letter-spacing: 2px;
+			    line-height: 17px;
+			    @include transition(all 200ms ease);
+				@media screen and (max-width:1366px){
+					right: -140px;
+				}
+				@media screen and (max-width:1150px){
+					font-size: 11px;
+					right: -110px;					
+				}
+				@media screen and (max-width:1024px){
+					width: 300px;
+					right: -50px;
+				}
+			}
+		}
+	}
+	
+	.ctx-ifrma-guiller{
+		width: 400px;
+		height: 500px;
+		position: absolute;
+		top:0;
+		bottom:0;
+		margin: auto;
+		right: 10%;
+		overflow: hidden;
+		iframe{
+			width: 100%;
+			height: 100%;
+			position: absolute;
+			top:0;
+			left: 0;
+			z-index: 1;
+		}
+		.mask{
+			width: 101%;
+			height: 110px;
+			top:0;
+			left: 0;
+			position: absolute;
+			background: #68b7fc;
+			z-index: 10;
+			.name{
+				font-family: 'arvoregular';
+			    font-size: 20px;
+			    color: #fff;
+			    text-align: center;
+			    letter-spacing: 3px;
+			    width: 100%;
+			    height: 15px;
+			    line-height: 45px;
+			    text-transform: uppercase;
+			}
+		}
+		@media screen and (max-width:1600px){
+			right: 8%;
+		}
+		@media screen and (max-width:1280px){
+			width: 300px;
+			height: 400px;
+			right: 6%;
+		}
+		@media screen and (max-width:480px){
+			width: 300px;
+			height: 350px;
+			right: 0;
+			left: 0;
+		}
+	}
+	
+	.pinera-habla{
+		position: absolute;
+		top: 0;
+		right: 0;
+		width: 53%;
+		height: 100%;
+		background: transparent url(../img/pinera-color.png) no-repeat right top;
+		background-size: cover;
+		@include transition(all 200ms ease);
+		@media screen and (max-width:1280px){
+			width: 57%;
+		}
+		@media screen and (max-width:480px){
+			width: 100%;
+		}
+		.cuadro{
+			width: 219px;
+			height: 240px;
+			position: absolute;
+			top:20%;
+			right: 57%;
+			background: transparent url(../img/pinera-cuadro.png) no-repeat center center;
+			background-size: contain;
+			opacity: 0;
+			display: block;
+			@include transition(all 200ms ease);
+			@media screen and (max-width:1280px){
+				width: 199px;
+				height: 220px;
+			}
+			@media screen and (max-width:1100px){
+				width: 189px;
+				height: 210px;
+			}
+			@media screen and (max-width:1024px){
+				width: 179px;
+				height: 200px;
+			}
+			@media screen and (max-width:480px){
+				display: none!important;
+			}
+			&:after{
+				content: 'Estoy programado para que conversemos sobre lo más importante de mi programa y mi vida personal. ¿Qué quieres saber?';
+			    width: 385px;
+			    height: auto;
+			    position: absolute;
+			    bottom: -110px;
+			    left: -200px;
+			    font-family: 'arvoregular';
+			    font-size: 13px;
+			    color: #fff;
+			    text-align: left;
+			    text-transform: uppercase;
+			    letter-spacing: 2px;
+			    line-height: 17px;
+			    @include transition(all 200ms ease);
+				@media screen and (max-width:1366px){
+					left: -140px;
+				}
+				@media screen and (max-width:1150px){
+					font-size: 11px;
+					left: -110px;					
+				}
+				@media screen and (max-width:1024px){
+					width: 300px;
+					left: -50px;
+				}
+			}
+		}
+	}
+	
+	.ctx-ifrma-pinera{
+		width: 400px;
+		height: 500px;
+		position: absolute;
+		top:0;
+		bottom:0;
+		margin: auto;
+		left: 10%;
+		iframe{
+			width: 100%;
+			height: 100%;
+			position: absolute;
+			top:0;
+			left: 0;
+			z-index: 1;
+		}
+		.mask{
+			width: 101%;
+			height: 110px;
+			top:0;
+			left: 0;
+			position: absolute;
+			background: #68b7fc;
+			z-index: 10;
+			.name{
+				font-family: 'arvoregular';
+			    font-size: 20px;
+			    color: #fff;
+			    text-align: center;
+			    letter-spacing: 3px;
+			    width: 100%;
+			    height: 15px;
+			    line-height: 45px;
+			    text-transform: uppercase;
+			}
+		}
+		@media screen and (max-width:1600px){
+			left: 8%;
+		}
+		@media screen and (max-width:1280px){
+			width: 300px;
+			height: 400px;
+			left: 6%;
+		}
+		@media screen and (max-width:480px){
+			width: 300px;
+			height: 350px;
+			right: 0;
+			left: 0;
+		}
+	}
+	
+	
+	
+	.ctx-big{
+		width: 80%;
+		height: 200px;
+		position: absolute;
+		top:0;
+		bottom: 0;
+		left: 10%;
+		margin: auto;
+		.bg-test{
+			width: 100%;
+			padding-bottom: 15%;
+			position: absolute;
+			top:0;
+			left: 0;
+			background: transparent url(../img/1.png) no-repeat center center;
+			background-size: cover;
+			z-index: 2;
+			&.active{
+				background: transparent url(../img/2.png) no-repeat center center;
+				background-size: cover;
+			}
+		}
+		.bigl{
+			width: 100%;
+			padding-bottom: 15%;
+			position: absolute;
+			top:0;
+			left: 0;
+			background: transparent url(../img/01.png) no-repeat center center;
+			background-size: cover;
+			z-index: 2;
+			opacity: 0;
+		}
+		.bigr{
+			width: 100%;
+			padding-bottom: 15%;
+			position: absolute;
+			top:0;
+			right: 0;
+			background: transparent url(../img/02.png) no-repeat center center;
+			background-size: cover;
+			z-index: 1;
+			opacity: 0;
+		}	
+	}
+	
+	
+	
+	//COMO FUNCIONA
+	.bg-comofunciona{
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		background: transparent url(../img/bg-comofunciona.jpg) no-repeat center center;
+		background-size: cover;
+	}
+	
+	.bloque-iconos{
+		position: absolute;
+		padding: 0;
+		width: 80%;
+		height: 240px;
+		list-style: none;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		margin: auto;
+		li{
+			position: relative;
+			display: inline-block;
+			float: left;
+			width: 25%;
+			img{
+				width: 90%;
+				height: auto;
+			    position: relative;
+			    display: block;
+			    margin: 0 auto;
+			    opacity: 0;
+			}
+			.imguno{
+				width: 76%;				
+			}
+			.imgdos{
+				width: 82%;				
+			}
+			.imgcuatro{
+				width: 71%;				
+			}
+		}
+	}
+	
+	
+	
+	
+	
+	
+	
+	.down{
+		width: 59px;
+		height: 35px;
+		position: absolute;
+		bottom: 20px;
+		left: 0;
+		right: 0;
+		margin: auto;
+		z-index: 1000;
+		background: transparent url(../img/down.png) no-repeat center center;
+		background-size: contain;		
+		&:hover{
+			opacity: .8;
+		}
+		@media screen and (max-width:480px){		    
+			width: 29px;
+			height: 18px;
+			bottom: 10px;
+	    }	
+	}
+	
+	.mas{
+		width: 40px;
+		height: 36px;
+		position: absolute;
+		bottom: 20px;
+		left: 0;
+		right: 0;
+		margin: auto;
+		z-index: 1000;
+		background: transparent url(../img/mas.png) no-repeat center center;
+		background-size: contain;		
+		&:hover{
+			opacity: .8;
+		}
+		@media screen and (max-width:480px){
+			width: 29px;
+			height: 27px;
+			bottom: 10px;
+		}		
+	}
+	
+	
+	.down.one:before{
+		content: '¿CONVERSAR CON LOS CANDIDATOS?';
+		width: 120px;
+		height: auto;
+		position: absolute;
+		top: -30px;
+		left: -30px;
+		font-family: 'arvoregular';
+		font-size: 10px;
+		color: #fff;
+		text-align: center;
+		letter-spacing: 1px;
+		@media screen and (max-width:480px){		    
+			left: -45px;
+	    }
+	}
+	.down.como:before{
+		content: 'ACERCA DEL PROYECTO';
+		width: 120px;
+		height: auto;
+		position: absolute;
+		top: -30px;
+		left: -30px;
+		font-family: 'arvoregular';
+		font-size: 10px;
+		color: #fff;
+		text-align: center;
+		letter-spacing: 1px;
+		@media screen and (max-width:480px){		    
+			left: -45px;
+	    }
+	}
+	
+	.mas.pinerahabla:before{
+		content: 'HABLAR CON ALEJANDRO GUILLER';
+		width: 130px;
+		height: auto;
+		position: absolute;
+		top: -30px;
+		left: -45px;
+		font-family: 'arvoregular';
+		font-size: 10px;
+		color: #fff;
+		text-align: center;
+		letter-spacing: 1px;
+	}
+	.mas.guillerhabla:before{
+		content: 'HABLAR CON SEBASTIAN PIÑERA';
+		width: 120px;
+		height: auto;
+		position: absolute;
+		top: -30px;
+		left: -40px;
+		font-family: 'arvoregular';
+		font-size: 10px;
+		color: #fff;
+		text-align: center;
+		letter-spacing: 1px;
+	}
+       
+}
+
+.section .ctx-ifrma-pinera iframe .b-agent-demo{
+	background: red;
+}
+.b-agent-demo .b-agent-demo_powered_by {
+	display: none!important;
+}
+
+
