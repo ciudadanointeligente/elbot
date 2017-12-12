@@ -1006,6 +1006,13 @@ body {
       padding: 0;
       list-style: none;
       text-align: center; }
+      
+      
+      @media screen and (max-width: 320px) {
+      .section .bloque-iconos .slick-dots {
+        bottom: -20px; } }
+      
+      
       .section .bloque-iconos .slick-dots li {
         position: relative;
         display: inline-block;
@@ -1075,8 +1082,8 @@ body {
    
    
 .section .sponsor{
-       width: 200px;
-       height: 100px;
+        width: 255px;
+		height: 130px;
        position: absolute;
        bottom:10px;
        left: 0;
@@ -1085,7 +1092,21 @@ body {
        background: transparent url(../img/bajada_logos.png) no-repeat center center;
        background-size: contain;
    }
-       
+      
+    @media screen and (max-width: 480px) {
+     	.section .sponsor{
+        	width: 175px;
+			height: 90px;
+        } 
+    }
+    @media screen and (max-width: 320px) {
+     	.section .sponsor{
+        	width: 165px;
+			height: 85px;
+        } 
+    }
+      
+      
 .section .sponsor .raya{
 	   width: 100%;
 	   height: 60%;
@@ -1096,8 +1117,8 @@ body {
 .section .sponsor .link{
 	   width: 100%;
 	   height: 20%;
-	   position: absolute;
-	   bottom:0;
+	    position: absolute;
+	    bottom: 10%;
 	   left: 0;
 	} 
         
