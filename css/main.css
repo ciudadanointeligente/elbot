@@ -499,19 +499,22 @@ body {
     @media screen and (max-width: 480px) {
       .section .intro2 {
         width: 80%;
-        left: 10%;
-        font-size: 12px;
-        line-height: 13px;
-        padding: 10px 0;
-        top: 70px; } }
+		    left: 10%;
+		    font-size: 12px;
+			line-height: 13px;
+			padding: 10px 0;
+			top: 70px; } }
     @media screen and (max-width: 320px) {
       .section .intro2 {
-        width: 75%;
-        left: 12.5%;
-        font-size: 11px;
-        line-height: 13px;
-        padding: 10px 0;
-        top: 60px; } }
+        width: 80%;
+			left: 10%;
+			font-size: 9px;
+			line-height: 11px;
+			padding: 10px 0;
+			top: 70px; } }
+        
+        
+        
   .section .rec-amarillo2 {
     width: 175px;
     height: 179px;
@@ -976,10 +979,18 @@ body {
     margin: auto; }
     @media screen and (max-width: 480px) {
       .section .bloque-iconos {
-        top: initial;
-        bottom: 50px;
-        left: 0;
-        right: 0; } }
+        top: 200px;
+		    bottom: initial;
+		    left: 0;
+		    right: 0; } }
+        
+    @media screen and (max-width: 320px) {
+      .section .bloque-iconos {
+        top: 170px;	
+		height: 190px; } }
+        
+        
+        
     .section .bloque-iconos .slick-track, .section .bloque-iconos .slick-list {
       height: 100%; }
     .section .bloque-iconos .slick-prev, .section .bloque-iconos .slick-next {
